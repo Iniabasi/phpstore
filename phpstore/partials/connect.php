@@ -2,19 +2,15 @@
 
 $host="localhost";
 $user="root";
-$password="Ofonime@97";
+$password="";
 $dbname="phpstore";
 
 $connect=mysqli_connect($host, $user, $password,$dbname);
 
-if($connect ->mysqli_error){
 
-	echo "No connection";
-
-
+if($connect -> mysqli_error){
+	echo "N";
 }else{
-	echo "We are good to go";
+	echo "yo";
 }
-
-
 ?>
