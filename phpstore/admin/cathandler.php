@@ -2,10 +2,10 @@
 
 include("../partials/connect.php");
 
-$cateory=$_POST['name'];
+$categories=$_POST['name'];
 
 
-$sql = "INSERT INTO categories(name) VALUES ('$category')";
+$sql = "INSERT INTO categories(name) VALUES ('$categories')";
 
 $connect->query($sql);
 

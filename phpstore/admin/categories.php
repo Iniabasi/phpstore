@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
+include('adminpartials/session.php');
 include('adminpartials/head.php');
 ?>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -39,12 +40,12 @@ include('adminpartials/head.php');
       <div class="col-sm-6">
 
 
-      <form role="form" action="cathandler.php">
+      <form role="form" action="cathandler.php" method="post">
         <h1>Categories</h1>
               <div class="box-body">
                 <div class="form-group">
                   <label for="category">Categories</label>
-                  <input type="name" class="form-control" id="category" placeholder="Enter Category">
+                  <input type="text" class="form-control" id="category" placeholder="Enter Category" name="name">
                 </div>
                 
               </div>

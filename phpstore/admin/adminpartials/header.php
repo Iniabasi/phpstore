@@ -1,3 +1,6 @@
+<?php
+include ("partials/connect.php")
+?>
  <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">

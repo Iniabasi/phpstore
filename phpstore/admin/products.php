@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
+include('adminpartials/session.php');
 include('adminpartials/head.php');
 ?>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -8,11 +9,10 @@ include('adminpartials/head.php');
 
   <?php
   include('adminpartials/header.php');
+  include ('adminpartials/aside.php');
   ?> 
    <!-- Left side column. contains the logo and sidebar -->
-  <?php
-  include ('adminpartials/aside.php');
-  ?>
+  
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -63,9 +63,16 @@ include('adminpartials/head.php');
                 <div class= "form-group">
                   <label for="category">Category</label>
                   <select id="category" name="category">
-                    <option>Shirts</option>
-                    <option>Pants</option>
-                    </select>
+                    <?php
+                    include('../partials/connect.php');
+                    $cat="SELECT * from categories";
+                    $results=mysqli_query($connect, $cat);
+                    while($row=mysqli_fetch_assoc($results)){
+                      echo "<option value=".$row['id'].">". $row['name']."</option>";
+                    }
+                    ?>
+                   
+                  </select>
                
               </div>
               <!-- /.box-body -->
