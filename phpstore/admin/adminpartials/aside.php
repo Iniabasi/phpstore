@@ -27,6 +27,12 @@
         <li class="header">MAIN NAVIGATION</li>
 
         <li>
+          <a href="adminindex.php">
+            <i class="fa fa-th"></i> <span>Home</span>
+            
+          </a>
+
+        <li>
           <a href="categories.php">
             <i class="fa fa-th"></i> <span>Category</span>
             
@@ -35,6 +41,14 @@
         <li>
           <a href="products.php">
             <i class="fa fa-th"></i> <span>Products</span>
+            
+          </a>
+        </li>
+        
+        </li>
+          <li>
+          <a href="adminpartials/logout.php">
+            <i class="fa fa-th"></i> <span>Sign out</span>
             
           </a>
         </li>

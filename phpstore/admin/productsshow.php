@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
 <?php
-include('adminpartials/head.php');
 include('adminpartials/session.php');
+include('adminpartials/head.php');
 ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <?php
   include('adminpartials/header.php');
+  include ('adminpartials/aside.php');
   ?> 
    <!-- Left side column. contains the logo and sidebar -->
-  <?php
-  include ('adminpartials/aside.php');
-  ?>
+  
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -32,23 +31,45 @@ include('adminpartials/session.php');
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-sm-9">
+    <div class= "row">
+
+      <div class="col-sm-9">
         <a href="products.php">
+        <button style="color:green">Add New</button></a>
 
-          <button style="color:green">Add Products</button>
+        <?php
+        include('../partials/connect.php');
+        $sql="Select * from products";
+        $results=$connect->query($sql);
+
+        while($final=$results->fetch_assoc()){ ?>
+          <a href="proshow.php?pro_id=<?php echo $final['id']?>">
+
+          <h3><?php echo $final['id'] ?>: <?php echo $final['name'] ?></h3><br>
 
         </a>
-        <hr>
-      </div>
-       <div class="col-sm-9">
-        <a href="categories.php">
 
-          <button style="color:green">Add Categories</button>
-
+        <a href="proupdate.php?up_id=<?php echo $final['id'] ?>">
+          <button>Update</button>
         </a>
-        <hr>
+
+        <a href="prodelete.php?del_id=<?php echo $final['id'] ?>">
+          <button style="color: red">Delete</button>
+        </a><hr>
+
+
+
+        <?php }
+
+        ?>
+        
       </div>
+
+  
+
+<div class="col-sm-3">
+  </div>
+</div>
 
     </section>
     <!-- /.content -->

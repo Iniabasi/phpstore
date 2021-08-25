@@ -9,4 +9,6 @@ $sql = "INSERT INTO categories(name) VALUES ('$categories')";
 
 $connect->query($sql);
 
+header('location: productsshow.php');
+
 ?>
